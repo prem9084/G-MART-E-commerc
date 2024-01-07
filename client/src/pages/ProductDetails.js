@@ -3,7 +3,7 @@ import Layout from "./../components/Layout/Layout";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -56,9 +56,9 @@ const ProductDetails = () => {
           <h6>Description : {product.description}</h6>
           <h6>
             Price :
-            {product?.price?.toLocaleString("en-US", {
+            {product?.price?.toLocaleString("en-IN", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>

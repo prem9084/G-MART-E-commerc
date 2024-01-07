@@ -1,20 +1,17 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "./../../components/Layout/Layout";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import toast from "react-hot-toast";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const Users = () => {
-
   const [users, setUsers] = useState([]);
   const [totalUser, setTotalUser] = useState("");
 
   const getAllUsers = async () => {
     try {
-      const { data } = await axios.get(
-        `${API_URL}/api/v1/users/alluser`
-      );
+      const { data } = await axios.get(`${API_URL}/api/v1/users/alluser`);
       setUsers(data.user);
       setTotalUser(data.totalCount);
     } catch (error) {

@@ -6,7 +6,7 @@ import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import { Select } from "antd";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const { Option } = Select;
 
 const AdminOrders = () => {
@@ -35,9 +35,12 @@ const AdminOrders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`${API_URL}/api/v1/auth/order-status/${orderId}`, {
-        status: value,
-      });
+      const { data } = await axios.put(
+        `${API_URL}/api/v1/auth/order-status/${orderId}`,
+        {
+          status: value,
+        }
+      );
       getOrders();
     } catch (error) {
       console.log(error);
@@ -93,7 +96,7 @@ const AdminOrders = () => {
                     <div className="row mb-2 p-3 card flex-row" key={p._id}>
                       <div className="col-md-4">
                         <img
-                          src={`https://g-mart.onrender.com/api/v1/product/product-photo/${p._id}`}
+                          src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
                           width="200px"

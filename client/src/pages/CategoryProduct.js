@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/CategoryProductStyles.css";
 import axios from "axios";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();

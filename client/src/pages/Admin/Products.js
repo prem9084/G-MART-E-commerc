@@ -4,7 +4,7 @@ import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const Products = () => {
   const [products, setProducts] = useState([]);
 

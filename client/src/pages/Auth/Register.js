@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,7 +13,6 @@ const Register = () => {
   const [address, setAddress] = useState("");
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
-  const API_URL = "https://g-mart.onrender.com"
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();

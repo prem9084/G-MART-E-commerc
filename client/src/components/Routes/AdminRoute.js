@@ -3,7 +3,7 @@ import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../Spinner";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 export default function PrivateRoute() {
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();

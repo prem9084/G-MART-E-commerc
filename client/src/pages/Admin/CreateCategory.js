@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
-const API_URL = "https://g-mart.onrender.com"
+const API_URL = "https://e-commerce-3dr7.onrender.com";
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -16,9 +16,12 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`${API_URL}/api/v1/category/create-category`, {
-        name,
-      });
+      const { data } = await axios.post(
+        `${API_URL}/api/v1/category/create-category`,
+        {
+          name,
+        }
+      );
       if (data?.success) {
         toast.success(`${name} is created`);
         getAllCategory();
@@ -34,7 +37,9 @@ const CreateCategory = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`${API_URL}/api/v1/category/get-category`);
+      const { data } = await axios.get(
+        `${API_URL}/api/v1/category/get-category`
+      );
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -77,7 +82,6 @@ const CreateCategory = () => {
       );
       if (data.success) {
         toast.success(`category is deleted`);
-
         getAllCategory();
       } else {
         toast.error(data.message);
